@@ -27,6 +27,12 @@ Marvel Comics search application
 - Create detail page when selecting a card.
 - Add tests
 
+## Instructions
+
+* clone the repository: `git clone https://github.com/admmello/marvel-comics.git`
+* install dependencies: `yarn` or `npm install`
+* run the project: `yarn start` or `npm start`
+
 ### Open source application, if you are interested in using it, feel free, but please cite the source, Thank you!
 
 #
@@ -57,5 +63,11 @@ Aplicação de busca de Comics da Marvel
 - Criar funcionalidade de favoritos
 - Criar página de detalhes ao selecionar um card.
 - Adicionar tests
+
+## Instruções
+
+* clone o repositório: `git clone https://github.com/admmello/marvel-comics.git`
+* instale as dependencias: `yarn` or `npm install`
+* execute o projeto: `yarn start` or `npm start` 
 
 ### Aplicação de código aberto, caso tenha interesse de utilizar fique a vontade, mas por favor cite a fonte, Obrigado!
