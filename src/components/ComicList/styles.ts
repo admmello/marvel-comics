@@ -7,6 +7,7 @@ export const Container = styled.div`
   padding: 176px 40px 50px;
   gap: 1rem;
   flex-wrap: wrap;
+  min-height: 100vh;
 `
 
 export const PaginationWrapper = styled.div`

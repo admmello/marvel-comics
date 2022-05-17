@@ -33,6 +33,7 @@ interface ComicsProviderProps {
 interface ComicsContextProps {
   comics: Comic[]
   search: string
+  isLoading: boolean
   searchComics: (value: string) => void
   previousPage: () => void
   nextPage: () => void
@@ -48,6 +49,7 @@ export function ComicsProvider({ children }: ComicsProviderProps) {
   const [offset, setOffset] = useState(0)
   const [search, setSearch] = useState('')
   const [total, setTotal] = useState(0)
+  const [isLoading, setIsLoading] = useState(false)
 
   const timestamp = String(new Date().getTime())
   const publicKey = '16bccb8f50a20a9054cb046356b25c24'
@@ -55,6 +57,7 @@ export function ComicsProvider({ children }: ComicsProviderProps) {
   const hash = md5(`${timestamp}${privateKey}${publicKey}`)
 
   useEffect(() => {
+    setIsLoading(true)
     if (search === '') {
       api
         .get(
@@ -63,6 +66,7 @@ export function ComicsProvider({ children }: ComicsProviderProps) {
         .then((response) => {
           setComics(response.data.data.results)
           setTotal(response.data.data.total)
+          setIsLoading(false)
         })
         .catch((error) => {
           console.log(error)
@@ -76,6 +80,7 @@ export function ComicsProvider({ children }: ComicsProviderProps) {
         .then((response) => {
           setComics(response.data.data.results)
           setTotal(response.data.data.total)
+          setIsLoading(false)
         })
         .catch((error) => {
           console.log(error)
@@ -106,7 +111,14 @@ export function ComicsProvider({ children }: ComicsProviderProps) {
 
   return (
     <ComicsContext.Provider
-      value={{ comics, search, searchComics, previousPage, nextPage }}
+      value={{
+        comics,
+        search,
+        isLoading,
+        searchComics,
+        previousPage,
+        nextPage,
+      }}
     >
       {children}
     </ComicsContext.Provider>
