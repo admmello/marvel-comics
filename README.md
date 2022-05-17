@@ -2,7 +2,7 @@
 
 Marvel Comics search application
 
-![image](https://user-images.githubusercontent.com/8430301/168734617-fb80ca23-7acb-4610-bd91-5e5065d9b9ab.png)
+![image](https://user-images.githubusercontent.com/8430301/168835909-dacb2548-2100-43df-9d67-90eb5d956e78.png)
 
 ## Functionalities
 
